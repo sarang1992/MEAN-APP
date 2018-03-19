@@ -1,0 +1,9 @@
+<div class="col-md-2">
+    <div class="sidebar content-box" style="display: block;">
+        <ul class="nav">
+            <!-- Main menu -->
+            <li [ngClass]="page_name == 'dashboard' ? 'current' : ''" ><a routerLink ="/admin/dashboard"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+            <li [ngClass]="page_name == 'user' ? 'current' : ''" ><a routerLink="/admin/user"><i class="glyphicon glyphicon-list"></i> Users</a></li>
+        </ul>
+    </div>
+</div>
