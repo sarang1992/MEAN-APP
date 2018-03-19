@@ -1,0 +1,38 @@
+
+<div class="row" >
+    <div class="content-box-large">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <div class="pull-right">
+                    <button *ngIf = "cookie.get('role') == 'admin'" class="btn btn-success" (click)="addUser()"> <span class="glyphicon glyphicon-user"></span> Add New User</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                <thead>
+                    <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th *ngIf = "cookie.get('role') == 'admin'" >Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let user of useres"> 
+                    <td>{{ user._id }}</td>
+                    <td>{{ user.v_name }}</td>
+                    <td>{{ user.v_email }}</td>
+                    <td>{{ user.v_type }}</td>
+                    <td *ngIf = "cookie.get('role') == 'admin'"> <span class="glyphicon glyphicon-trash" (click)="deleteUser(user, $event)"></span>
+                        <span class="glyphicon glyphicon-edit" (click)="gotoEdit(user._id)" ></span>
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
